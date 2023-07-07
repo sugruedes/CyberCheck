@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="column is-one-third">
+    <form method="post">
+        {% csrf_token %}
+        <div class="buttons has-addons">
+            <button class="button is-danger" id="time_button" name="time_button" >Time</button>
+            <script type="text/javascript">
+                let d = Date.now();
+                let time = d/1000;
+                document.getElementById("time_button").value = time;
+            </script>
+        </div>
+    </form>
+</div>
+<div class="column is-one-third">
+        <div class="content">
+        {% for time in times %}
+            <div class="box">
+                {{ time.place }}
+                <span class="is-small has-text-grey-light">
+                    ({{ time.time }})
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock content %}
