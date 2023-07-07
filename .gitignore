@@ -55,6 +55,13 @@ cover/
 *.mo
 *.pot
 
+# sugruedes temp stuff
+# i name temp files *.des a lot
+*.des
+*.des.old
+*.des.orig
+*.des.diff
+
 # Django stuff:
 *.log
 local_settings.py
